@@ -1,0 +1,193 @@
+/* 🌎 RESET & BASE --------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #f7f8fa;
+  color: #1f1f1f;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 🌈 NAVBAR ---------------------------------------------------------- */
+.navbar {
+  background: linear-gradient(90deg, #005bea 0%, #00c6fb 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.4s ease;
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.nav-link {
+  color: #f0f0f0 !important;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+/* 🔍 SEARCH BAR ------------------------------------------------------ */
+form[role="search"] input {
+  border-radius: 25px;
+  padding-left: 15px;
+  border: none;
+  box-shadow: 0 0 0 2px transparent;
+  transition: box-shadow 0.3s ease;
+}
+
+form[role="search"] input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00c6fb;
+}
+
+.btn-outline-success {
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-success:hover {
+  background-color: #fff;
+  color: #005bea;
+}
+
+/* 📰 NEWS CONTAINER -------------------------------------------------- */
+#newsContainer {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* 🧱 CARD ------------------------------------------------------------ */
+.card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 🖼️ CARD IMAGE ------------------------------------------------------ */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* 📄 CARD BODY ------------------------------------------------------- */
+.card-body {
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  color: #555;
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+
+/* 🔗 BUTTON INSIDE CARD ---------------------------------------------- */
+.card .btn {
+  align-self: flex-start;
+  background: linear-gradient(90deg, #005bea 0%, #00c6fb 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  color: #fff;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.card .btn:hover {
+  background: linear-gradient(90deg, #00c6fb 0%, #005bea 100%);
+  transform: translateY(-2px);
+}
+
+/* ⚙️ RESPONSIVIDADE -------------------------------------------------- */
+@media (max-width: 992px) {
+  .card img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  #newsContainer {
+    gap: 1rem;
+  }
+
+  .card {
+    border-radius: 12px;
+  }
+
+  .card-body {
+    padding: 0.8rem 1rem;
+  }
+}
+
+/* 🌟 ANIMAÇÕES SUAVES ------------------------------------------------ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.6s ease both;
+}
+
+/* 💬 MENSAGENS DE ERRO OU VAZIO -------------------------------------- */
+.text-center.text-muted,
+.text-danger.text-center {
+  margin-top: 3rem;
+  font-size: 1.1rem;
+}
